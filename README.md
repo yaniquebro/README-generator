@@ -1,26 +1,19 @@
-# undefined
+# README Generator
   
   ## Description
-  For this progect we were to use Nodejs and Inquirer  to create a readme generator
+  For this progect we were to use Nodejs and Inquirer  to create a readme generator, that way developers can reate a readme from the command line.
+  
   ## Deployed Application URL
   undefined
+  
   ## Screenshot
   ![alt-text](undefined)
-  ## Table of Contents
-  * [Features](#features)
-  * [Languages & Dependencies](#languagesanddependencies)
-  * [How to Use This Application](#HowtoUseThisApplication)
-  * [Contributors](#contributors)
-  * [Testing](#testing)
-  * [Questions](#questions)
-  ## Features
-  undefined
+  
   ## Languages & Dependencies
-  undefined
-  ## How to Use This Application:
-  undefined
+  Node
+  JSON
+  Inquirer
+
   ## Contributors
-  undefined
-  ## Testing
-  undefined
+  Xpert Learning
   

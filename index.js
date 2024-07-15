@@ -6,7 +6,7 @@ const generateMarkdown = require ('./utils/generateMarkdown');
 const questions = [
     {
         type: 'input',
-        name: 'title',
+        name: 'projectName',
         message: 'What is title of your project?',
     },
     {
@@ -45,23 +45,24 @@ const questions = [
         name: 'gitHubUser',
         message: 'What is your GitHub username?',
     },
-    {
-        type: 'input',
-        name: 'userEmail',
-        message: 'What is your email address?',
-        validate: function (email) {
-            // Regex mail check (return true if valid mail)
-            const isValid = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
-            return isValid ? true : "Enter a valid email address";
-        }
-    }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    function writeToFile(fileName, data) { 
+        const content = generateMarkdown(data);
+        fs.writeFile(fileName, content, (err) =>
+            err ? console.log(err) : console.log('Success!')
+        );
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((responses) => {
+        console.log("Creating Professional README.md File...");
+        writeToFile("./dist/README.md", generateMarkdown({ ...responses }));
+      });
+}
 
 // Function call to initialize app
 init();
